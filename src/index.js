@@ -3,9 +3,21 @@ import ReactDOM from "react-dom";
 import useInput from "./useInput";
 import useTabs from "./useTabs";
 import useTitle from "./useTitle";
+import useClick from "./useClick";
 
 import "./styles.css";
 
+const App = () => {
+  const sayHello = () => console.log("say hello");
+  const title = useClick(sayHello);
+  return (
+    <div className="App">
+      <div ref={title}>Hi</div>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const titleUpdater = useTitle("Loading...");
   //setTimeout(() => titleUpdater("Home"), 5000);
@@ -15,6 +27,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
