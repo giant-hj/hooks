@@ -1,12 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import useInput from "./useInput";
 import useTabs from "./useTabs";
 import useTitle from "./useTitle";
 import useClick from "./useClick";
+import useConfirm from "./useConfirm";
 
 import "./styles.css";
 
+const App = () => {
+  const deleteWorld = () =>  console.log("Delete the world");
+  const abort = () => console.log("Aborted");
+  const confirmDelete = useConfirm("Are you sure?", deleteWorld, abort);
+  return (
+    <div className="App">
+      <button onClick={confirmDelete}>Delete the world</button>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const sayHello = () => console.log("say hello");
   const title = useClick(sayHello);
@@ -16,6 +29,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
