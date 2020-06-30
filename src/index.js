@@ -6,9 +6,21 @@ import useTitle from "./useTitle";
 import useClick from "./useClick";
 import useConfirm from "./useConfirm";
 import usePreventLeave from "./usePreventLeave";
+import useBeforeLeave from "./useBeforeLeave";
 
 import "./styles.css";
 
+const App = () => {
+  const begForLife = () => console.log("Plz dont leave");
+  useBeforeLeave(begForLife);
+  return (
+    <div className="App">
+      <h1>Hello</h1>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const [enablePrevent, disablePrevent] = usePreventLeave();
   return (
@@ -18,6 +30,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
