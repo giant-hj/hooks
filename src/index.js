@@ -5,9 +5,21 @@ import useTabs from "./useTabs";
 import useTitle from "./useTitle";
 import useClick from "./useClick";
 import useConfirm from "./useConfirm";
+import usePreventLeave from "./usePreventLeave";
 
 import "./styles.css";
 
+const App = () => {
+  const [enablePrevent, disablePrevent] = usePreventLeave();
+  return (
+    <div className="App">
+      <button onClick={enablePrevent}>Protect</button>
+      <button onClick={disablePrevent}>Unprotect</button>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const deleteWorld = () =>  console.log("Delete the world");
   const abort = () => console.log("Aborted");
@@ -18,6 +30,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
