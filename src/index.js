@@ -12,7 +12,25 @@ import useBeforeLeave from "./useBeforeLeave";
 import useFadeIn from "./useFadeIn";
 import useNetwork from "./useNetwork";
 import useScroll from "./useScroll";
+import useFullScreen from "./useFullScreen"
 
+const App = () => {
+  const onFullS = (isFull) => {
+    console.log(isFull ? "We are full" : "We are small");
+  }
+  const { element, triggerFull, exitFull} = useFullScreen(onFullS);
+  return (
+    <div className="App">
+      <div ref={element}>
+        <img ref={element} src="https://miro.medium.com/max/1280/1*75jvBleoQfAZJc3sgTSPQA.jpeg"></img>
+        <button onClick={triggerFull}>Make fullScreen</button>
+        <button onClick={exitFull}>Exit fullScreen</button>
+      </div>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const { y } = useScroll();
   return (
@@ -21,6 +39,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
