@@ -25,13 +25,13 @@ const useFullScreen = (callback) => {
     }
     const exitFull = () => {
         if (document.exitFullscreen) {
-        document.exitFullscreen();
+            document.exitFullscreen();
         } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
+            document.mozCancelFullScreen();
         } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
+            document.webkitExitFullscreen();
         } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
+            document.msExitFullscreen();
         }
         runCallback(findAllByTestId);
     }

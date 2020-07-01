@@ -13,7 +13,20 @@ import useFadeIn from "./useFadeIn";
 import useNetwork from "./useNetwork";
 import useScroll from "./useScroll";
 import useFullScreen from "./useFullScreen"
+import useNotification from "./useNotification";
 
+const App = () => {
+  const triggerNotif = useNotification("Can I steal your kimch?", {
+    body: "I love kimch dont you"
+  });
+  return (
+    <div className="App">
+      <button onClick={triggerNotif}>Hello</button>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const onFullS = (isFull) => {
     console.log(isFull ? "We are full" : "We are small");
@@ -29,6 +42,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
