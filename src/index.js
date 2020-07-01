@@ -1,3 +1,5 @@
+import "./styles.css";
+
 import React from "react";
 import ReactDOM from "react-dom";
 import useInput from "./useInput";
@@ -7,15 +9,15 @@ import useClick from "./useClick";
 import useConfirm from "./useConfirm";
 import usePreventLeave from "./usePreventLeave";
 import useBeforeLeave from "./useBeforeLeave";
-
-import "./styles.css";
+import useFadeIn from "./useFadeIn";
 
 const App = () => {
-  const begForLife = () => console.log("Plz dont leave");
-  useBeforeLeave(begForLife);
+  const fadeInH1 = useFadeIn(2, 3);
+  const fadeInP = useFadeIn(5, 6);
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <h1 {...fadeInH1}>Hello</h1>
+      <p {...fadeInP}>lalalalal asafasfcvsafw ccxcxcdqwd</p>
     </div>
   )
 }
