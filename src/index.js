@@ -10,7 +10,21 @@ import useConfirm from "./useConfirm";
 import usePreventLeave from "./usePreventLeave";
 import useBeforeLeave from "./useBeforeLeave";
 import useFadeIn from "./useFadeIn";
+import useNetwork from "./useNetwork";
 
+const App = () => {
+  const handleNetwork = (online) => {
+    console.log(online ? "We just went online" : "we are offline");
+  }
+  const onLine = useNetwork(handleNetwork);
+  return (
+    <div className="App">
+      <h1>{onLine ? "Online" : "Offline"} </h1>
+    </div>
+  );
+}
+
+/*
 const App = () => {
   const fadeInH1 = useFadeIn(2, 3);
   const fadeInP = useFadeIn(5, 6);
@@ -21,6 +35,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {
