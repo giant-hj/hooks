@@ -14,7 +14,22 @@ import useNetwork from "./useNetwork";
 import useScroll from "./useScroll";
 import useFullScreen from "./useFullScreen"
 import useNotification from "./useNotification";
+import useAxios from "./useAxios";
 
+const App = () => {
+  const { loading, data, refetch } = useAxios({
+    url: "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+  });
+  return (
+    <div className="App">
+      <h1>{data && data.status}</h1>
+      <h2>{loading && "Loading"}</h2>
+      <button onClick={refetch}>Refetch</button>
+    </div>
+  )
+}
+
+/*
 const App = () => {
   const triggerNotif = useNotification("Can I steal your kimch?", {
     body: "I love kimch dont you"
@@ -25,6 +40,7 @@ const App = () => {
     </div>
   )
 }
+*/
 
 /*
 const App = () => {

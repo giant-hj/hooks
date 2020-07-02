@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useTabs = (initialTab, allTabs) => {
     //if (!allTabs || !Array.isArray(allTabs)) {

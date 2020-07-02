@@ -1,6 +1,6 @@
 import { findAllByTestId } from "@testing-library/react";
 
-const { useState, useEffect, useRef } = require("react");
+const { useRef } = require("react");
 
 const useFullScreen = (callback) => {
     const element = useRef();
